@@ -10,7 +10,7 @@ beforeEach(async () => {
 });
 
 afterEach(async () => {
-    await page.close()
+    await page.browser().close()
 });
 
 test('the header has the correct text', async () => {

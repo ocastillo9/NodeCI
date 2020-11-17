@@ -7,22 +7,17 @@ class CustomPage {
         });
 
         const page = await browser.newPage();
-        const customPage = new CustomPage(page,browser);
+        const customPage = new CustomPage(page);
 
         return new Proxy(customPage, {
             get: function (target, property) {
-                return customPage[property] || browser[property] || page[property]
+                return customPage[property] || page[property]
             }
         })
     }
 
-    constructor(page, browser) {
+    constructor(page) {
         this.page = page
-        this.browser = browser
-    }
-
-    close() {
-        this.browser.close()
     }
 }
 
