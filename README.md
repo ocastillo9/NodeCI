@@ -8,3 +8,5 @@ docker run --name node-redis -p 6379:6379 redis:latest
 
 docker start node-mongo
 docker start node-redis
+
+npm run dev
